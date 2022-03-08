@@ -13,6 +13,11 @@ const sidebar = [
   },
   {
     id: uuidv4(),
+    url: '/pages',
+    title: 'Pages',
+  },
+  {
+    id: uuidv4(),
     url: '/post',
     title: 'Posts',
   },
