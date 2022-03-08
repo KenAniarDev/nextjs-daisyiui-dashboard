@@ -52,11 +52,11 @@ export default function DashboardContainer({ children }) {
   return (
     <>
       {/* navbar */}
-      <div className='navbar border-b-2 bg-base-100'>
+      <div className='navbar border-b-2 border-base-300 bg-base-100'>
         <div className='flex-1'>
           <label
             htmlFor='my-drawer-2'
-            className='btn btn-ghost btn-square drawer-button lg:hidden'
+            className='drawer-button btn btn-square btn-ghost lg:hidden'
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -83,19 +83,27 @@ export default function DashboardContainer({ children }) {
             )}
           </button>
           <div className='dropdown-end dropdown'>
-            <label tabIndex='0' className='avatar btn btn-circle btn-ghost'>
+            <label tabIndex='0' className='avatar btn btn-ghost btn-circle'>
               <div className='w-10 rounded-full'>
                 <img src='https://api.lorem.space/image/face?hash=33791' />
               </div>
             </label>
             <ul
               tabIndex='0'
-              className='dropdown-content menu rounded-box menu-compact mt-3 w-52 bg-base-100 p-2 shadow'
+              className='dropdown-content menu menu-compact mt-3 w-52 bg-base-100 shadow'
             >
               {navbar.map((item) => (
-                <li key={item.id}>
+                <li
+                  key={item.id}
+                  className={
+                    router.pathname == item.url ? 'bordered' : 'hover-bordered'
+                  }
+                >
                   <Link href={item.url}>
-                    <a className={router.pathname == item.url ? 'active' : ''}>
+                    <a
+                      style={{ borderRadius: 0 }}
+                      className='uppercase tracking-widest'
+                    >
                       {item.title}
                     </a>
                   </Link>
@@ -107,20 +115,28 @@ export default function DashboardContainer({ children }) {
       </div>
       {/* sidebar */}
       <div
-        className='drawer drawer-mobile w-full'
+        className='drawer-mobile drawer w-full'
         style={{ height: 'calc(100vh - 70px)' }}
       >
         <input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
         <div className='drawer-content flex flex-col items-center justify-center'>
           {children}
         </div>
-        <div className='drawer-side border-r-2'>
+        <div className='drawer-side '>
           <label htmlFor='my-drawer-2' className='drawer-overlay'></label>
-          <ul className='menu w-72 overflow-y-auto bg-base-100 p-4 text-base-content'>
+          <ul className='menu w-60 overflow-y-auto border-r-2 border-base-300 bg-base-100 text-base-content'>
             {sidebar.map((item) => (
-              <li key={item.id}>
+              <li
+                key={item.id}
+                className={
+                  router.pathname == item.url ? 'bordered' : 'hover-bordered'
+                }
+              >
                 <Link href={item.url}>
-                  <a className={router.pathname == item.url ? 'active' : ''}>
+                  <a
+                    style={{ borderRadius: 0 }}
+                    className='py-2 text-sm uppercase tracking-widest'
+                  >
                     {item.title}
                   </a>
                 </Link>
