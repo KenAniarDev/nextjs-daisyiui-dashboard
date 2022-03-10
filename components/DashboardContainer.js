@@ -13,18 +13,8 @@ const sidebar = [
   },
   {
     id: uuidv4(),
-    url: '/pages',
-    title: 'Pages',
-  },
-  {
-    id: uuidv4(),
-    url: '/post',
-    title: 'Posts',
-  },
-  {
-    id: uuidv4(),
-    url: '/media-library',
-    title: 'Media Library',
+    url: '/forms',
+    title: 'Forms',
   },
 ];
 const navbar = [
@@ -119,9 +109,7 @@ export default function DashboardContainer({ children }) {
         style={{ height: 'calc(100vh - 70px)' }}
       >
         <input id='my-drawer-2' type='checkbox' className='drawer-toggle' />
-        <div className='drawer-content flex flex-col items-center justify-center'>
-          {children}
-        </div>
+        <div className='drawer-content p-4'>{children}</div>
         <div className='drawer-side '>
           <label htmlFor='my-drawer-2' className='drawer-overlay'></label>
           <ul className='menu w-60 overflow-y-auto border-r-2 border-base-300 bg-base-100 text-base-content'>

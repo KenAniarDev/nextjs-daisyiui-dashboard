@@ -1,9 +1,5 @@
 import DashboardContainer from '../components/DashboardContainer';
 
 export default function Home() {
-  return (
-    <>
-      <DashboardContainer />
-    </>
-  );
+  return <DashboardContainer></DashboardContainer>;
 }
