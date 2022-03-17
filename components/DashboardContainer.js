@@ -16,6 +16,11 @@ const sidebar = [
     url: '/forms',
     title: 'Forms',
   },
+  {
+    id: uuidv4(),
+    url: '/react-select',
+    title: 'React Select',
+  },
 ];
 const navbar = [
   {
